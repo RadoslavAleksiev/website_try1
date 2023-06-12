@@ -11,9 +11,8 @@ pipeline {
     stage('Build') {
       steps {
         // Copy the index.html file to the web server directory
-        sh 'cp index.html /path/to/web/server/directory'
+        sh 'cp index.html /var/www/html'
       }
     }
   }
 }
-
