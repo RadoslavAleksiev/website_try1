@@ -10,14 +10,10 @@ pipeline {
     
     stage('Build') {
       steps {
-        sh 'npm install'  // Or any other build commands specific to your project
-      }
-    }
-    
-    stage('Deploy') {
-      steps {
-        sh 'npm run build'  // Or any other deployment commands specific to your project
+        // Copy the index.html file to the web server directory
+        sh 'cp index.html /path/to/web/server/directory'
       }
     }
   }
 }
+
