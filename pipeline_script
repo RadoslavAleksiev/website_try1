@@ -11,9 +11,7 @@ pipeline {
     stage('Build') {
       steps {
         // Create the destination directory
-        sh 'sudo mkdir -p /var/www/html'
-        sh 'sudo chown -R jenkins:jenkins /var/www/html'
-        sh 'sudo chmod -R 755 /var/www/html'
+        sh 'mkdir -p /var/www/html'
         
         // Copy the index.html file to the web server directory
         sh 'cp index.html /var/www/html'
