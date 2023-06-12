@@ -1,0 +1,23 @@
+pipeline {
+  agent any
+  
+  stages {
+    stage('Clone Repository') {
+      steps {
+        git 'https://github.com/your-username/your-repo.git'
+      }
+    }
+    
+    stage('Build') {
+      steps {
+        sh 'npm install'  // Or any other build commands specific to your project
+      }
+    }
+    
+    stage('Deploy') {
+      steps {
+        sh 'npm run build'  // Or any other deployment commands specific to your project
+      }
+    }
+  }
+}
