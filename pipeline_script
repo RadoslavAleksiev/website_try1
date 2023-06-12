@@ -11,11 +11,12 @@ pipeline {
     stage('Build') {
       steps {
         // Create the destination directory
-        sh 'mkdir -p /var/www/html'
+        sh 'mkdir -p $WORKSPACE/html'
         
         // Copy the index.html file to the web server directory
-        sh 'cp index.html /var/www/html'
+        sh 'cp index.html $WORKSPACE/html'
       }
     }
   }
 }
+
