@@ -10,6 +10,9 @@ pipeline {
     
     stage('Build') {
       steps {
+        // Create the destination directory
+        sh 'mkdir -p /var/www/html'
+        
         // Copy the index.html file to the web server directory
         sh 'cp index.html /var/www/html'
       }
